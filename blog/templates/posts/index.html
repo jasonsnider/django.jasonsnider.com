@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if latest_posts_list %}
+    {% for post in latest_posts_list %}
+        {% autoescape off %}
+        <article>
+            <header>
+                <h2><a href="/post/{{post.slug}}">{{ post.title }}</a></h2>
+                <small class="text-muted">Published: {{ post.publish.date }} by {{ user.first_name  }} {{user.last_name}}</small>
+            </header>
+            <main>
+                {% filter truncatechars_html:350 %}
+                {{ post.body }}
+                {% endfilter %}
+
+            </main>
+        </article>
+        {% endautoescape %}
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+
+{% endblock content %}

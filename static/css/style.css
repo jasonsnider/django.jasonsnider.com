@@ -1,0 +1,19 @@
+body
+{
+    margin: 0;
+    background: #000;
+}
+
+header
+{
+    background-color: rgba(187, 68, 0, 0.8);
+    padding: 1em;
+    font-size: 18px;
+    color: #fff;
+}
+
+main
+{
+    background: #fff;
+    padding: 1em;
+}
