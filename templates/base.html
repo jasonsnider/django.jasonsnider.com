@@ -12,7 +12,18 @@
     <meta name="keywords" content="">
     <meta name="author" content="Jason Snider">
     <!--<link rel="icon" href="favicon.ico">-->
-    <title>{% block title %}{% endblock %}</title>
+
+    {% block title %}
+        {% if post.title %}
+            <title>{{ post.title }}</title>
+            <meta name="description" content="{{ post.description }}">
+            <meta name="keywords" content="{{ post.keywords }}">
+        {% else %}
+            <title>{{ title }}</title>
+            <meta name="description" content="{{ description }}">
+            <meta name="keywords" content="{{ keywords }}">
+        {% endif %}
+    {% endblock %}
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
