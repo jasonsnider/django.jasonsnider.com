@@ -12,7 +12,6 @@ class Post(models.Model):
         (1, 'Draft'),
         (2, 'Published'),
     )
-    id = models.UUIDField(primary_key=True, default=uuid.uuid1, editable=False)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     body = models.TextField(null=True)
