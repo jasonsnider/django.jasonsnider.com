@@ -87,7 +87,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'jasonsnider',
         'USER': 'root',
-        'PASSWORD': 'password'
+        'PASSWORD': 'password',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_TRANS_TABLES',
+            'charset': 'utf8'
+        }
     }
 }
 

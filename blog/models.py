@@ -13,7 +13,7 @@ class Post(models.Model):
         (2, 'Published'),
     )
     slug = models.SlugField(max_length=200, unique=True)
-    canonical = models.CharField(max_length=255, unique=True, default='')
+    canonical = models.CharField(max_length=255, default='')
     title = models.CharField(max_length=200)
     body = models.TextField(null=True)
     description = models.CharField(null=True,max_length=500)
